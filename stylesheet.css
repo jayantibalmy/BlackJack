@@ -1,0 +1,22 @@
+body {
+    background-color:maroon;
+    text-align: center; 
+    
+}
+#game-section{
+    padding-top: 5%;
+}
+
+h1{
+    color: yellow;
+}
+
+p , h3 {
+    color: white;
+}
+
+#start-btn, #new-card{
+    padding: 2%;
+    color: maroon;
+    font-weight: bolder;
+}
