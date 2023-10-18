@@ -15,7 +15,7 @@ p , h3 {
     color: white;
 }
 
-#start-btn, #new-card{
+button{
     padding: 2%;
     color: maroon;
     font-weight: bolder;

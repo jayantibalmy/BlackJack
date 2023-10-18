@@ -10,6 +10,7 @@ function startGame() {
     let sum = firstCard + seconCard;
     document.getElementById("sum").textContent = sum;
     gameLogic(sum);
+    document.getElementById("start-btn").disabled = true; //to prevent clicking more than once
 }
 
 function gameLogic(sum) {
@@ -20,18 +21,25 @@ function gameLogic(sum) {
         hasBlackJack = true;
     }
     else if (sum > 21) {
-        message = "lmao go off, you lost!😭";
+        message = "lmao you lost!😭😂";
         isAlive = false;
     }
     document.getElementById("message-el").textContent = message;
 }
 
 function newCard() {
-    let newCard = Math.floor(Math.random() * 10) + 2;
-    let currentSumstr = document.getElementById("sum").textContent;
-    let currentSum = Number(currentSumstr);
-    let sum = currentSum + newCard;
-    document.getElementById("sum").textContent = sum;
-    document.getElementById("cards").textContent += " , " + newCard;
-    gameLogic(sum);
-}
+    if(isAlive===true && hasBlackJack=== false) // condtion to make the newCard btn functionable only when the player has chances
+    {
+        let newCard = Math.floor(Math.random() * 10) + 2;
+        let currentSumstr = document.getElementById("sum").textContent;
+        let currentSum = Number(currentSumstr);
+        let sum = currentSum + newCard;
+        document.getElementById("sum").textContent = sum;
+        document.getElementById("cards").textContent += " , " + newCard;
+        gameLogic(sum);
+    }    
+    }
+
+ function reset(){
+    location.reload();
+ }
